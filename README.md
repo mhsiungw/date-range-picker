@@ -1,12 +1,22 @@
 # date-range-picker
 
+## Live site
+
+https://mhsiungw.github.io/date-range-picker/
+
 ## Installation
 
-To start the project
+### To start the project
 
 ```sh
 npm i
 npm run dev
+```
+
+### To run tests
+
+```sh
+npm test
 ```
 
 ## Usage
