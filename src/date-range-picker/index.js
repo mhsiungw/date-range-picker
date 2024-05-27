@@ -7,7 +7,7 @@ import "./style.css";
 
 export default function DateRangePicker({ onChange }) {
   const [range, setRange] = useState([]);
-  const [currentMonth, setCurrentMonth] = useState(Utils.getCurrentMonth());
+  const [currentMonth, setCurrentMonth] = useState(Utils.getCurrent());
   const weeks = useMemo(() => Utils.getWeekArray(currentMonth), [currentMonth]);
 
   useEffect(() => {

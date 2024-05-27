@@ -1,7 +1,7 @@
 import moment from "moment";
 
 class Utils {
-  static getCurrentMonth() {
+  static getCurrent() {
     return moment();
   }
 
@@ -65,7 +65,7 @@ class Utils {
     return value.clone().endOf("month");
   }
 
-  static getWeekArray(value = this.getCurrentMonth()) {
+  static getWeekArray(value) {
     const start = this.startOfWeek(this.startOfWMonth(value));
     const end = this.endOfWeek(this.endOfMonth(value));
     const nestedWeeks = [];
@@ -77,7 +77,7 @@ class Utils {
       nestedWeeks[weekNumber] = nestedWeeks[weekNumber] || [];
       nestedWeeks[weekNumber].push(current);
 
-      current = current.clone().add("day", 1);
+      current = current.clone().add(1, "day");
 
       count += 1;
     }
