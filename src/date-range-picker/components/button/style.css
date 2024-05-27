@@ -1,0 +1,12 @@
+.base-btn {
+  all: unset;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+}
+
+.base-btn:focus-visible {
+  border: 1px solid #000;
+}
