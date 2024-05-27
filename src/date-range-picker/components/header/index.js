@@ -1,16 +1,23 @@
+import Button from "../button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./style.css";
 
 export default function Header({ header, onPrev, onNext }) {
   return (
     <div className="header">
-      <button className="btn" onClick={onPrev}>
+      <Button
+        className="btn"
+        aria-label="Select Previous Month"
+        onClick={onPrev}
+      >
         <ChevronLeft />
-      </button>
-      <span className="header-title">{header}</span>
-      <button className="btn" onClick={onNext}>
+      </Button>
+      <span className="header-title" aria-label={header}>
+        {header}
+      </span>
+      <Button className="btn" aria-label="Select Next Month" onClick={onNext}>
         <ChevronRight />
-      </button>
+      </Button>
     </div>
   );
 }

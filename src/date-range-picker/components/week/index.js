@@ -1,3 +1,3 @@
-export default function Week({ children }) {
-  return <div>{children}</div>;
+export default function Week({ children, ...rest }) {
+  return <div {...rest}>{children}</div>;
 }

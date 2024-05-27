@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import Button from "../button";
 import "./style.css";
 
 const baseStyle = "day-btn";
@@ -16,8 +17,12 @@ export default function Day({
   });
 
   return (
-    <button className={className} onClick={() => onDaySelect(day)}>
+    <Button
+      className={className}
+      aria-label={day.format("MM 月 DD 日")}
+      onClick={() => onDaySelect(day)}
+    >
       {day.format("DD 日")}
-    </button>
+    </Button>
   );
 }

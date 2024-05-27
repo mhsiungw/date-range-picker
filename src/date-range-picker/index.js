@@ -43,8 +43,8 @@ export default function DateRangePicker({ onChange }) {
         onPrev={handlePrevMonthSelect}
         onNext={handleNextMonthSelect}
       />
-      {weeks.map((week) => (
-        <Week key={`week-${week[0]}`}>
+      {weeks.map((week, index) => (
+        <Week key={`week-${week[0]}`} aria-label={`Week ${index + 1}`}>
           {week.map((day) => (
             <span key={day.toString()} onDoubleClick={() => setRange([])}>
               <Day
