@@ -21,7 +21,7 @@ class Utils {
     return value.isAfter(input);
   }
 
-  static isBetween(value, range) {
+  static isBetween(value, range = []) {
     const [start, end] = range;
     if (!start) {
       return value.isSame(end);

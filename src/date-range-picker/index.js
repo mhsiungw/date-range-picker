@@ -24,12 +24,16 @@ export default function DateRangePicker({ onChange }) {
 
   const handleDaySelect = (nextDay) => {
     setRange(([start, end]) => {
-      if (Utils.isSameOrBefore(nextDay, start)) {
-        return [nextDay, end];
+      if (start && end) {
+        return [];
       }
 
-      if (Utils.isSameOrAfter(nextDay, end)) {
-        return [start, nextDay];
+      if (!start && !end) {
+        return [nextDay, undefined];
+      }
+
+      if (nextDay < start) {
+        return [nextDay, start];
       }
 
       return [start, nextDay];
